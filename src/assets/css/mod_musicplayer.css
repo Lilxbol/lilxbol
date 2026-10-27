@@ -1,0 +1,122 @@
+div#mod_musicplayer {
+    border-top: 0.092vh solid rgba(var(--color_r), var(--color_g), var(--color_b), 0.3);
+    font-family: var(--font_main_light);
+    letter-spacing: 0.092vh;
+    padding: 0.645vh 1.2vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex-grow: 1;
+}
+
+div#mod_musicplayer > h1 {
+    font-family: var(--font_main_light);
+    font-size: 1.6vh;
+    opacity: 0.6;
+    margin: 0 0 0.6vh 0;
+}
+
+div#mod_musicplayer i {
+    font-style: normal;
+    float: right;
+}
+
+div#mod_mp_list {
+    overflow-y: auto;
+    overflow-x: hidden;
+    flex-grow: 1;
+    min-height: 6vh;
+    max-height: 24vh;
+    margin-bottom: 0.8vh;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(var(--color_r), var(--color_g), var(--color_b), 0.4) transparent;
+}
+
+div.mod_mp_track {
+    padding: 0.45vh 0.4vh;
+    font-size: 1.5vh;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+}
+
+div.mod_mp_track:hover {
+    opacity: 1;
+    background-color: rgba(var(--color_r), var(--color_g), var(--color_b), 0.1);
+}
+
+div.mod_mp_track.mod_mp_active {
+    opacity: 1;
+    background-color: rgba(var(--color_r), var(--color_g), var(--color_b), 0.2);
+    color: rgb(var(--color_r), var(--color_g), var(--color_b));
+    font-family: var(--font_main);
+}
+
+div#mod_mp_now {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4vh;
+}
+
+div#mod_mp_title {
+    font-size: 1.7vh;
+    font-family: var(--font_main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 70%;
+}
+
+div#mod_mp_time {
+    font-size: 1.3vh;
+    opacity: 0.6;
+    white-space: nowrap;
+}
+
+div#mod_mp_progress {
+    height: 0.5vh;
+    background-color: rgba(var(--color_r), var(--color_g), var(--color_b), 0.15);
+    cursor: pointer;
+    margin-bottom: 0.7vh;
+}
+
+div#mod_mp_progressbar {
+    height: 100%;
+    width: 0%;
+    background-color: rgb(var(--color_r), var(--color_g), var(--color_b));
+    transition: width .25s linear;
+}
+
+div#mod_mp_controls {
+    display: flex;
+    justify-content: center;
+    gap: 2.4vh;
+    margin-bottom: 0.6vh;
+}
+
+div#mod_mp_controls span {
+    cursor: pointer;
+    font-size: 1.8vh;
+    opacity: 0.75;
+    transition: all .15s ease-in-out;
+    user-select: none;
+}
+
+div#mod_mp_controls span:hover {
+    opacity: 1;
+    text-shadow: 0 0 1.2vh rgba(var(--color_r), var(--color_g), var(--color_b), 0.8);
+}
+
+div#mod_mp_folder {
+    font-size: 1.05vh;
+    opacity: 0.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: rtl;
+    text-align: left;
+}
