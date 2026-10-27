@@ -1,0 +1,98 @@
+/* Lilxbol hacker FX: CRT scanlines + vignette + subtle flicker */
+div#fx_crt {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999990;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.09) 0vh,
+        rgba(0,0,0,0.09) 0.18vh,
+        transparent 0.18vh,
+        transparent 0.5vh
+    );
+    mix-blend-mode: multiply;
+}
+
+div#fx_crt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 58%,
+        rgba(0,0,0,0.35) 100%
+    );
+}
+
+div#fx_crt::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 12vh;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(var(--color_r), var(--color_g), var(--color_b), 0.04) 50%,
+        transparent 100%
+    );
+    animation: fx_crt_sweep 7s linear infinite;
+}
+
+@keyframes fx_crt_sweep {
+    0% { top: -12vh; }
+    100% { top: 100vh; }
+}
+
+/* Digital rain canvas */
+canvas#fx_rain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999989;
+    opacity: 0.07;
+}
+
+/* Telegram handle tag */
+div#fx_tg {
+    position: fixed;
+    bottom: 0.8vh;
+    right: 1.2vh;
+    z-index: 999991;
+    font-family: var(--font_main_light);
+    font-size: 1.2vh;
+    letter-spacing: 0.1vh;
+    color: rgba(var(--color_r), var(--color_g), var(--color_b), 0.45);
+    pointer-events: none;
+}
+
+div#fx_tg em {
+    font-style: normal;
+    color: rgba(var(--color_r), var(--color_g), var(--color_b), 0.75);
+}
+
+/* Boot screen telegram footer */
+div.boot_tg {
+    position: absolute;
+    bottom: 3vh;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: var(--font_main_light);
+    font-size: 1.6vh;
+    letter-spacing: 0.3vh;
+    color: rgba(var(--color_r), var(--color_g), var(--color_b), 0.5);
+}
+
+/* Glitch pulse on the boot title */
+h1.glitch {
+    animation: fx_title_glitch 2.4s infinite;
+}
+
+@keyframes fx_title_glitch {
+    0%, 88%, 100% { transform: none; opacity: 1; }
+    90% { transform: translate(0.4vh, -0.2vh) skewX(3deg); opacity: 0.85; }
+    92% { transform: translate(-0.4vh, 0.2vh) skewX(-3deg); opacity: 0.9; }
+    94% { transform: translate(0.2vh, 0); opacity: 1; }
+}

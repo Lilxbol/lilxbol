@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+ - name: Feature Ideas
+   url: https://github.com/GitSquared/lilxbol/discussions/new?category=ideas
+   about: Have a crazy idea for Lilxbol you'd like to share? Please do so here!
+ - name: Questions
+   url: https://github.com/GitSquared/lilxbol/discussions/new?category=questions
+   about: Confused? Ask all your questions here.
